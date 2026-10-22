@@ -55,8 +55,10 @@ Target: op1r 45, `c378c29ddb9c4bcf07491fb056b1a10852c61f43`.
 No on-device op1r 45 load/play test has been performed. Remaining checks:
 plugin loading, control/Shift behavior, preset import and save/reload, FX
 mapping and missing-effect handling, animated-screen cost, and tape plus FX
-under load. Deep Pressure requests Reverb; Stone Hall requests Hundekraft
-Plate, absent from this source tree. Other factory recipes are dry.
+under load. Deep Pressure requests Reverb. Stone Hall has been regenerated
+with T3 off for this contribution, preserving all eight sound words, ADSR and
+octave -3; its AIFC payload was round-trip checked. The other thirteen factory
+recipes are also dry.
 
 ## Performance design and limits
 

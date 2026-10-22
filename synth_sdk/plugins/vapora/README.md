@@ -10,7 +10,8 @@ See [TESTING.md](TESTING.md) for measured results and remaining checks.
 Two independently phased, detuned playback heads per voice; 14 sound Characters
 and 15 factory presets. The OP-1 supplies velocity, T2 envelope and optional T3
 processing. This release raises fixed output gain by 3x (about +9.54 dB), retaining
-table data, sound-word mappings and visuals. Stone Hall now saves Plate enabled;
+table data, sound-word mappings and visuals. For this op1r contribution,
+Stone Hall saves T3 off and retains its sound settings and octave -3;
 the other fourteen preset files are unchanged. A note-off callback now
 tracks held serials solely for the screen; it does not alter DSP or T2 release.
 
@@ -135,9 +136,8 @@ Wave colors, base stars and the other dial paints remain unchanged.
 Build `vapora.op1p` with the SDK packer and install it using op1r's plugin
 workflow (`synth_sdk/PLUGINS.md`). Copy the optional AIF bank into `synth/vapora`
 in normal disk mode. The existing Hundekraft `.knl` is a separate release format.
-These AIFs retain the published recipes: Deep Pressure requires Reverb and
-Stone Hall requires Hundekraft Plate, which is not included in this op1r tree.
-Use them dry unless the corresponding effect is available; native preset import,
+Deep Pressure requires Reverb. Stone Hall is saved dry so it has no Plate
+dependency; the other thirteen recipes are also dry. Native preset import,
 FX mapping and save/reload on op1r remain to be verified.
 
 Do not replace current presets with older R6 evaluation files: their Character
@@ -146,9 +146,8 @@ Character assignments; `PRESET_CATALOG.csv` and `presets/recipes.json` document
 this bank. Save edits using the OP-1's usual sound-key gesture.
 
 Deep Pressure saves the separate Hundekraft Reverb effect (time 70%, tone 46%,
-diffusion 73%, mix 31%). Stone Hall saves Plate enabled with readouts
-Decay 99, Pre 99, Tone 00 and Mix 33, and starts at octave -3. Each requires its respective effect to be
-installed. The other thirteen presets are dry. Host fixtures do not include
+diffusion 73%, mix 31%) and requires that effect to be installed. Stone Hall
+starts at octave -3 with T3 off. Fourteen presets are dry. Host fixtures do not include
 native T2 or T3 effects.
 
 ## Sound and implementation

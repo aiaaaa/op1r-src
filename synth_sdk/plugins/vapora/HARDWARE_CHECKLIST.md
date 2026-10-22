@@ -4,16 +4,15 @@ The `.op1p` builds against op1r 45 but has not been installed/tested on that
 firmware. Verify loading, Shift, all controls, preset import/save/reload, missing
 FX handling, and playing with tape plus FX. Read [TESTING.md](TESTING.md) for
 completed Hundekraft measurements. The release checklist below is retained
-for reference; Plate is not bundled with this op1r contribution.
+for reference. Stone Hall is dry in this contribution.
 
 # VAPORA 1.2.3 hardware checks
 
-Output is approximately 9.54 dB louder. Stone Hall now saves Plate enabled;
+Output is approximately 9.54 dB louder. Stone Hall now saves T3 off;
 the other 14 preset files remain unchanged. Update the plugin and replace only
 Stone Hall's AIF. Start with the master volume lower for this comparison.
 
-- With Plate installed, load Stone Hall and verify T3 is enabled and shows
-  Decay 99, Pre 99, Tone 00 and Mix 33, with octave -3. Confirm these survive reload.
+- Load Stone Hall and verify T3 is off and octave is -3. Confirm these survive reload.
 
 - Compare single notes and six-note chords with 1.2.2 and other synths at the
   same master setting. Listen for clean peaks, comfortable level and dynamics.

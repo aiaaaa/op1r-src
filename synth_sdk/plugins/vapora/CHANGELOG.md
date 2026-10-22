@@ -1,3 +1,9 @@
+# op1r contribution
+
+- Adapt the 1.2.3 sources to the current `.op1p` build and host harnesses.
+- Save Stone Hall dry (T3 off), preserving sound words, ADSR and octave -3.
+  The previous 1.2.3 Hundekraft release notes below describe its Plate setting.
+
 # 1.2.3 — output level and Stone Hall Plate
 
 - Raise fixed voice output gain from 3840/32768 to 11520/32768: 3x amplitude,
