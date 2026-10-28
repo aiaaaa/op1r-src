@@ -1,4 +1,4 @@
-# VAPORA 1.2.3
+# VAPORA 1.2.4
 
 Six-voice PADsynth instrument for the original OP-1. This contribution adapts
 the published Hundekraft 3.0.2 release to op1r 45 (`c378c29`); the `.op1p`
@@ -9,8 +9,10 @@ The scene represents the controls; Shift reveals numerical/named readouts.
 See [TESTING.md](TESTING.md) for measured results and remaining checks.
 Two independently phased, detuned playback heads per voice; 14 sound Characters
 and 15 factory presets. The OP-1 supplies velocity, T2 envelope and optional T3
-processing. This release raises fixed output gain by 3x (about +9.54 dB), retaining
-table data, sound-word mappings and visuals. For this op1r contribution,
+processing. Version 1.2.4 adds smoother star motion and green signature designs;
+audio, blue wave geometry, sound-word mappings and presets are unchanged from
+the 1.2.3 contribution. The fixed 3x output gain introduced in 1.2.3 is retained.
+For this op1r contribution,
 Stone Hall saves T3 off and retains its sound settings and octave -3;
 the other fourteen preset files are unchanged. A note-off callback now
 tracks held serials solely for the screen; it does not alter DSP or T2 release.
@@ -85,10 +87,11 @@ Thickness, Interval, Motion and Speed have no direct wave-geometry effect.
 
 ## Interval stars and Thickness
 
-The original 48 cool stars (8 large, 16 medium, 24 small) retain their layout,
-sizes, colors and drift. Interval adds a distinct seeded field on top; changing
-Interval immediately replaces its placement. Returning to an Interval restores
-its arrangement at the current animation phase. Added strokes avoid the base.
+The base field has 48 cool stars (8 large, 16 medium, 24 small). Interval adds
+a distinct seeded field; changing Interval immediately replaces its placement.
+Small/tiny stars use a separate clock at 37.5% of the larger stars' speed.
+All small stars follow smooth subpixel paths and fade near the sun and screen
+wrap. They can overlap instead of jumping sideways to avoid one another.
 
 | Interval | Added distribution (before sun occlusion), stock size | Color |
 |---|---|---|
@@ -104,13 +107,10 @@ its arrangement at the current animation phase. Added strokes avoid the base.
 | Octave above | 48 tiny | Green |
 
 
-Each Interval also adds a unique outline star, 14–18px at minimum Thickness:
-paired four-, five-, six-, seven- and eight-point silhouettes with differing
-proportions and rotations. Blue signatures appear over green added stars, green
-signatures over cool stars. The signature drifts the full left-to-right path,
-wraps to the far left and passes behind the sun. Original stars draw over it.
-Thickness rotates once through 360 degrees and grows the outline from 100% to
-160%; its line width remains 1.5px. Audio behavior is unchanged.
+Each Interval also adds a green signature: five retained outline stars alternate
+with a capped compass plus, forked diagonal cross, six-ray asterisk, eight-ray
+asterisk and short-diagonal cross. Thickness rotates each through a full turn
+and grows it up to 60%. Signatures cross the sky and pass behind the sun.
 
 ## Sun
 
@@ -184,7 +184,8 @@ python3 plugins/vapora/tools/build.py --toolchain /path/to/toolchain --skip-prev
 The toolchain directory contains `bfin-gcc/bin` and `bfin/bin`. Omit
 `--toolchain` to use Docker. Checked-in tables allow the standard packer to
 build without NumPy/Pillow or regeneration. `preview.png` is a host approximation
-with a substitute font; `audio_vapora.wav` comes from the upstream audio harness.
+with a substitute font, retained from 1.2.3; `audio_vapora.wav` comes from the
+upstream audio harness and is byte-identical after this update.
 The build scripts do not install anything on the device.
 
 Additional dry headroom sweep (13,440 six-voice cases):

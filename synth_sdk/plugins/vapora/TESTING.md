@@ -1,3 +1,28 @@
+# VAPORA 1.2.4 op1r update — 2026-10-28
+
+Target remains op1r 45, `c378c29ddb9c4bcf07491fb056b1a10852c61f43`.
+This update carries the published 1.2.4 star changes while retaining the op1r
+adapter and all 15 contribution presets, including dry Stone Hall at octave -3.
+
+- Native Blackfin GCC 13.3.0/binutils 2.42 build with the unmodified op1r
+  packer: `.op1p` 484,105 bytes, image 473,320 bytes, BSS 4,028 bytes,
+  636 relocations. Relocation self-check and core import checks pass.
+- VAPORA ASan/UBSan host suite passes, including 512 consecutive star-motion
+  frames per Interval, 128 solid-sun occlusion phases per Interval, the 37.5%
+  small-star drift ratio, all signatures, Shift, wave bounds and audio checks.
+- Table generation is repeatable; all 15 regenerated AIFC presets are
+  byte-identical to the previous contribution. DSP, tables, wave geometry and
+  parameter mappings are unchanged.
+- Standard upstream audio harness passes ASan/UBSan; its WAV is byte-identical
+  to the previous contribution (peak 6,217 in this fixture).
+- Standard upstream screen harness passes ASan/UBSan; the sampled default
+  frame contains 250 raster lines. This is not a timing measurement.
+
+No new hardware CPU measurement or on-device op1r test is claimed. The 1.2.3
+Hundekraft readings below remain historical; animated-screen cost, load/play,
+preset save/reload and tape-plus-FX checks on op1r remain pending. Existing
+preview media are retained from 1.2.3.
+
 # VAPORA 1.2.3 validation — 2026-10-22
 
 ## OP-1 hardware: Hundekraft 3.0.2

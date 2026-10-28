@@ -1,3 +1,14 @@
+# op1r contribution update — 1.2.4
+
+- Bring in the published 1.2.4 visual changes: stable subpixel star paths,
+  soft sun/edge fades, a separate 37.5% small-star drift clock, and five new
+  green cross/asterisk signatures alongside the five retained green outlines.
+- Extend host coverage for star continuity, solid-sun occlusion and drift ratio.
+- Preserve the op1r adapter, native packer and host harness compatibility.
+- Audio, blue wave geometry, controls and all 15 contribution presets are
+  unchanged, including Stone Hall saved dry at octave -3.
+- See TESTING.md for current build checks and historical 1.2.3 device readings.
+
 # op1r contribution
 
 - Adapt the 1.2.3 sources to the current `.op1p` build and host harnesses.
